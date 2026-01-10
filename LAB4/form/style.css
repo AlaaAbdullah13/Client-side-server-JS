@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    font-family: Arial, sans-serif;
+    background-color: #f6cd61;
+
+}
+
+.main-container {
+    width: 600px;
+    padding: 40px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.row {
+    margin-bottom: 15px;
+}
+
+label {
+    display: inline-block;
+    width: 60px;
+    font-weight: bold;
+}
+
+input {
+    width: 150px;
+}
+
+.button-row {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+table, th, td {
+    border: 2px solid #5d4037; 
+}
+
+th, td {
+    padding: 5px;
+    height: 25px;
+    text-align: center;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 8 - Form with Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="form-container">
+            <div class="row">
+                <label>Name:</label>
+                <input type="text" id="nameInp">
+            </div>
+            <div class="row">
+                <label>Age:</label>
+                <input type="text" id="ageInp">
+            </div>
+            <div class="row">
+                <label>E-mail:</label>
+                <input type="text" id="emailInp">
+            </div>
+            <div class="button-row">
+                <button onclick="addUser()">Add</button>
+                <button onclick="resetForm()">Reset</button>
+            </div>
+        </div>
+
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+</html>
