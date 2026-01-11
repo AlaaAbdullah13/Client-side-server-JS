@@ -1,11 +1,8 @@
 function Event_object() {
     document.addEventListener("keydown", function (event) {
-        
-        let charEntered = event.key; 
-
-        let code = event.keyCode;
-
-        let message = "You pressed: " + charEntered + "\n";
+        var charEntered = event.key; 
+        var code = event.keyCode;
+        var message = "You pressed: " + charEntered + "\n";
         message += "ASCII Code: " + code;
 
         if (event.altKey) message += "\nAlt key was held!";

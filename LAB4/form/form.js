@@ -1,47 +1,48 @@
+
+
+var addBtn = document.querySelector("button[onclick='addUser()']"); 
+var table = document.querySelector("#userTable");
+var tbody = document.querySelector("#userTable tbody");
+
 function addUser() {
-    // Select input elements
-    const nameInput = document.getElementById("nameInp");
-    const ageInput = document.getElementById("ageInp");
-    const emailInput = document.getElementById("emailInp");
+    var nameInp = document.querySelector("#nameInp");
+    var ageInp = document.querySelector("#ageInp");
+    var emailInp = document.querySelector("#emailInp");
 
-    const name = nameInput.value.trim();
-    const age = ageInput.value.trim();
-    const email = emailInput.value.trim();
+    var nameValue = nameInp.value;
+    var ageValue = ageInp.value;
+    var emailValue = emailInp.value;
 
-    // 1. Validation: All fields are required
-    if (!name || !age || !email) {
+    
+    if (nameValue === "" || ageValue === "" || emailValue === "") {
         alert("All fields are required!");
-        return;
-    }
+        return; 
+        }
 
-    // 2. Validation: Age must be a number
-    if (isNaN(age)) {
+    if (!isFinite(ageValue)) {
         alert("Age must be a numeric value!");
+        ageInp.classList.add("invalid"); 
         return;
     }
 
-    // 3. Validation: Simple email format check
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address!");
-        return;
-    }
+    var tr = document.createElement("tr");
+    
+    tr.innerHTML = "<td>" + nameValue + "</td>" +
+                   "<td>" + ageValue + "</td>" +
+                   "<td>" + emailValue + "</td>";
 
-    // 4. Create and Append Row if data is valid
-    const tableBody = document.querySelector("#userTable tbody");
-    const newRow = tableBody.insertRow();
+    tbody.append(tr);
 
-    // Insert cells for Name, Age, and Email
-    newRow.insertCell(0).innerText = name;
-    newRow.insertCell(1).innerText = age;
-    newRow.insertCell(2).innerText = email;
+    table.style.display = "table";
 
-    // Clear form after successful add
     resetForm();
 }
 
 function resetForm() {
-    document.getElementById("nameInp").value = "";
-    document.getElementById("ageInp").value = "";
-    document.getElementById("emailInp").value = "";
+    document.querySelector("#nameInp").value = "";
+    document.querySelector("#ageInp").value = "";
+    document.querySelector("#emailInp").value = "";
+    
+    document.querySelector("#ageInp").classList.remove("invalid");
 }
+

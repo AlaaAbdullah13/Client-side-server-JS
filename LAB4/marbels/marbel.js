@@ -17,12 +17,12 @@ function moveMarble() {
 
 function startAnim() {
     if (timer === null) {
-        timer = setInterval(moveMarble, speed); //
+        timer = setInterval(moveMarble, speed); 
     }
 }
 
 function stopAnim() {
-    clearInterval(timer); //
+    clearInterval(timer); 
     timer = null;
 }
 
@@ -39,7 +39,7 @@ for (var i = 0; i < marbles.length; i++) {
 speedBtn.addEventListener("click", function() {
     stopAnim();
     
-    if (isFinite(speed)) { //
+    if (isFinite(speed)) { 
         speed = (speed <= 250) ? 1000 : speed / 2;
     }
     
@@ -47,4 +47,4 @@ speedBtn.addEventListener("click", function() {
     startAnim();
 });
 
-window.addEventListener("load", startAnim); //
+window.addEventListener("load", startAnim); 
